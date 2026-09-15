@@ -12,19 +12,35 @@ import torch.optim as optim
 import torch.nn.functional as F
 from torchvision import datasets, models, transforms
 from torch.utils.data import DataLoader
-from sklearn.utils.class_weight import compute_class_weight
-from sklearn.metrics import classification_report, cohen_kappa_score
 from PIL import Image
-from tqdm import tqdm
 
-# Import plotting suite from src
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from src.plot_dashboard import (
-    plot_training_dashboard,
-    plot_confusion_matrix_heatmap,
-    plot_per_class_metrics,
-    plot_roc_auc_curves
-)
+# Safe imports for deployment & inference
+try:
+    from sklearn.utils.class_weight import compute_class_weight
+    from sklearn.metrics import classification_report, cohen_kappa_score
+except ImportError:
+    compute_class_weight = None
+    classification_report = None
+    cohen_kappa_score = None
+
+try:
+    from tqdm import tqdm
+except ImportError:
+    tqdm = lambda x, **kwargs: x
+
+try:
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    from src.plot_dashboard import (
+        plot_training_dashboard,
+        plot_confusion_matrix_heatmap,
+        plot_per_class_metrics,
+        plot_roc_auc_curves
+    )
+except ImportError:
+    plot_training_dashboard = None
+    plot_confusion_matrix_heatmap = None
+    plot_per_class_metrics = None
+    plot_roc_auc_curves = None
 
 # Seed reproducibility
 SEED = 42
