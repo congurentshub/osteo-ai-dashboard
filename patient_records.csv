@@ -1,0 +1,9 @@
+patient_id,patient_name,patient_age,patient_gender,scan_date,diagnosis_result,confidence_pct,prob_normal,prob_osteopenia,prob_osteoporosis,timestamp
+PAT-1001,John Doe,62,Male,2026-09-10,Osteoporosis,91.45,0.02,0.06,0.91,2026-09-10 10:30:00
+PAT-1002,Jane Smith,45,Female,2026-09-11,Osteopenia,84.2,0.1,0.84,0.06,2026-09-11 11:15:00
+PAT-1003,Robert Johnson,38,Male,2026-09-12,Normal,95.1,0.95,0.04,0.01,2026-09-12 14:00:00
+PAT-1004,Emily Davis,58,Female,2026-09-13,Osteopenia,78.9,0.15,0.79,0.06,2026-09-13 09:45:00
+PAT-1005,Michael Brown,67,Male,2026-09-14,Osteoporosis,88.75,0.05,0.06,0.89,2026-09-14 16:20:00
+PAT-1006,Sarah Wilson,52,Female,2026-09-15,Normal,92.3,0.92,0.06,0.02,2026-09-15 08:30:00
+PAT-5967,Patient Test,38,Male,2026-09-15,Osteoporosis,76.34,0.004,0.2326,0.7634,2026-09-15 09:49:27
+PAT-6606,Patient Test,50,Female,2026-09-15,Osteoporosis,57.34,0.0899,0.3367,0.5734,2026-09-15 10:00:06
